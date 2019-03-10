@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home2</title>
+    <link href="../../static/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap-validator/0.5.3/css/bootstrapValidator.css" rel="stylesheet">
+    <script src="../../static/js/jquery-1.12.4.js"></script>
+    <script src="../../static/js/bootstrap.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+    <style type="text/css">
+    .ava{
+    height: auto;
+    width: auto;
+    margin-top: 10%;
+        margin-bottom: 7%;
+    }
+    .inpinfo{
+    margin-top: 20%;
+    }
+    .user_password   {
+        margin-top: -100px;
+    }
+    .three_radio{
+        margin-left: 35%;
+
+    }
+    .user_password input{
+            margin-top: 15px;
+
+    }
+    .forget_register{
+            margin:5%;
+    }
+    .register_modal{
+            margin:5%;
+    }
+    .forget_modal{
+            margin: 20px;
+    }
+
+</style>
+
+</head>
+
+<body>
+<div class="container">
+		<div>
+			<img src="" id = 'cover' class="img-responsive ava center-block">
+		</div>
+      <div role="form" class="three_radio">
+          <div class="radio">
+            <label class="radio-inline" >
+              <input type="radio" name="inlineRadioOptions" id="adminRadio1"  value="admin"  > 管理员&nbsp&nbsp&nbsp
+            </label >
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" id="studentRadio2" value="student" checked> 学生&nbsp&nbsp&nbsp
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" id="teacherRadio3" value="teacher"> 老师&nbsp&nbsp&nbsp
+            </label>
+          </div>
+
+      </div>
+		<div role="form" class="user_password">
+			<div class="form-group inpinfo form-group-lg">
+				<input type="text" name="" id="user"  class="form-control" placeholder="请输入账户">
+				<input type="password" name=""  class="form-control" id="inputPassword3" placeholder="请输入密码">
+			</div>
+			<div>
+				<button class="btn btn-primary btn-block btn-lg" id="log_btn">登录</button>
+			</div>
+		</div>
+
+		<div class="col-xs-4 pull-left forget_register">
+			<a data-toggle="modal" data-target="#forget" id = "forget_pwd">无法登陆？</a>
+		</div>
+		<div class="col-xs-4 pull-right forget_register">
+			<a data-toggle="modal"  style="margin-left: 65%" data-target="#register" id = "new_register">注册新账号</a>
+		</div>
+		</div>
+	</div>
+
+ <!-- 忘记Modal -->
+    <div class="modal fade" id="forget" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- 忘记头 -->
+          <div class="modal-header">
+            <button type="button" class="close" style = "text-align:right;" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" >忘记密码</h4>
+          </div>
+          <div class="modal-body">
+              <!-- 忘记内容 -->
+            <div class="row forget_modal">
+                <form id="forgetForm" role="form" class="form-signin " >
+                    <h2 class="lead">请输入用户信息</h2>
+
+                    <div class="form-group ">
+                        <label for="forgetName">用户名：</label>
+                        <input class="form-control" type="text" name="username" id="forgetName" />
+                    </div>
+                    <div class="form-group">
+                        <label for="forgetPhone">手机号码：</label><input class="form-control"
+                            type="text" name="phone" id="forgetPhone" />
+                    </div>
+                    <div class="form-group">
+                        <label for="forgetEmail">email:</label>
+                        <input class="form-control" type="email" name="email" id="forgetEmail" />
+                    </div>
+                    <div class="form-group">
+                        <label for="forgetInvite">邀请码：</label>
+                        <input class="form-control" type="text" name="invite" id="forgetInvite">
+                    </div>
+                    <div class="form-group">
+                        <label for="new_password">新密码：</label><input class="form-control"
+                            type="password" name="password" id="new_password"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="new_repassword">确认密码：</label><input class="form-control"
+                            type="password" name="repassword" id="new_repassword" />
+                    </div>
+                    <div class="form-group">
+                        <label for="forgetVc">验证码：</label>
+                        <input class="form-control" type="text" name="vc" id = "forgetVc">
+                            <img class='verifycode' src="verifycode" alt="CheckCode"/>
+                        <span class='verifycodeChange'>看不清，换一个</span>
+                        <br>
+                    </div>
+
+                </form>
+            </div>
+          </div>
+            <!-- 忘记尾 -->
+          <div class="modal-footer">
+              <div class="row">
+                  <div class="col-xs-6">
+                      <div class="form-group">
+                          <button class="btn btn-lg btn-primary btn-block" type="submit" disabled="disabled" id = "forgetSure">确认</button>
+                      </div>
+                  </div>
+                  <div class="col-xs-6">
+                      <div class="form-group">
+                          <button class="btn btn-lg btn-primary btn-block" data-dismiss="modal" id="forgetBack" >返回首页</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- 注册Modal -->
+
+    <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- 注册头 -->
+          <div class="modal-header">
+            <button type="button" class="close" style = "text-align:right;" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel" >注册</h4>
+          </div>
+          <div class="modal-body">
+              <!-- 注册内容 -->
+            <div class="row register_modal">
+                <form id="defaultForm" role="form" class="form-signin " action=""
+                    method="post">
+                    <h2 class="form-signin-heading">请输入注册信息：</h2>
+
+                    <div class="form-group ">
+                        <label for="username">用户名：</label>
+                        <input class="form-control" type="text" name="username" id="username" />
+
+                    </div>
+                    <div class="form-group">
+                        <label for="password">密码：</label><input class="form-control"
+                            type="password" name="password" id="password"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="repassword">确认密码：</label><input class="form-control"
+                            type="password" name="repassword" id="repassword" />
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">手机号码：</label><input class="form-control"
+                            type="text" name="phone" id="phone" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">email:</label>
+                        <input class="form-control" type="email" name="email" id="email" />
+                    </div>
+                    <div class="form-group">
+                        <label for="invite">邀请码：</label>
+                        <input class="form-control" type="text" name="invite" id="invite">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vc">验证码：</label>
+                        <input class="form-control" type="text" name="vc" id = "vc">
+                            <img class='verifycode' src="verifycode" alt="CheckCode"/>
+                        <span class='verifycodeChange'>看不清，换一个</span>
+                        <br>
+                    </div>
+
+                </form>
+            </div>
+          </div>
+            <!-- 注册尾 -->
+          <div class="modal-footer">
+              <div class="row">
+                  <div class="col-xs-6">
+                      <div class="form-group">
+                          <button class="btn btn-lg btn-primary btn-block" type="submit" disabled="disabled" id = "sure">确认注册</button>
+                      </div>
+                  </div>
+                  <div class="col-xs-6">
+                      <div class="form-group">
+                          <button class="btn btn-lg btn-primary btn-block" data-dismiss="modal" id="back" >返回首页</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</body>
+
+<script type="text/javascript">
+$(function(){/* 文档加载，执行一个函数*/
+    //注册规则
+     $('#defaultForm').bootstrapValidator({
+         message: 'This value is not valid',
+         feedbackIcons: {/*input状态样式图片*/
+             valid: 'glyphicon glyphicon-ok',
+             invalid: 'glyphicon glyphicon-remove',
+             validating: 'glyphicon glyphicon-refresh'
+         },
+         fields: {/*验证：规则*/
+             username: {//验证input项：验证规则
+                 message: 'The username is not valid',
+
+                 validators: {
+                     notEmpty: {//非空验证：提示消息
+                         message: '用户名不能为空'
+                     },
+                     stringLength: {
+                         min: 3,
+                         max: 5,
+                         message: '用户名长度必须为3-5位数'
+                     },
+                     threshold :  3 , //有3字符以上才发送ajax请求，（input中输入一个字符，插件会向服务器发送一次，设置限制，6字符以上才开始）
+                     remote: {//ajax验证。server result:{"valid",true or false} 向服务发送当前input name值，获得一个json数据。例表示正确：{"valid",true}
+                         url: 'app/checkNewUser',//验证地址
+                         message: '用户名错误',//提示消息
+                         delay :  1000,//每输入一个字符，就发ajax请求，服务器压力还是太大，设置2秒发送一次ajax（默认输入一个字符，提交一次，服务器压力太大）
+                         type: 'POST',//请求方式
+                         //自定义提交数据，默认值提交当前input value
+                           data: function(validator) {
+                               return {
+                                   password: $('[name="password"]').val(),
+                                   username: $('[name="username"]').val(),
+
+                               };
+                            }
+
+                     },
+                     regexp: {
+                         regexp: /^([1-9][0-9]*)$/,
+                         message: '用户名由数字组成'
+                     }
+                 }
+             },
+             password: {
+                 message:'密码无效',
+                 validators: {
+                     notEmpty: {
+                         message: '密码不能为空'
+                     },
+                     stringLength: {
+                         min: 6,
+                         max: 30,
+                         message: '密码长度必须在6到30之间'
+                     },
+                     identical: {//相同
+                         field: 'password', //需要进行比较的input name值
+                         message: '两次密码不一致'
+                     },
+                     different: {//不能和用户名相同
+                         field: 'username',//需要进行比较的input name值
+                         message: '不能和用户名相同'
+                     },
+                     regexp: {
+                         regexp: /^[a-zA-Z0-9_\.]+$/,
+                         message: 'The username can only consist of alphabetical, number, dot and underscore'
+                     }
+                 }
+             },
+             repassword: {
+                 message: '密码无效',
+                 validators: {
+                     notEmpty: {
+                         message: '用户名不能为空'
+                     },
+                     stringLength: {
+                         min: 6,
+                         max: 30,
+                         message: '密码长度必须在6到30之间'
+                     },
+                     identical: {//相同
+                         field: 'password',
+                         message: '两次密码不一致'
+                     },
+                     different: {//不能和用户名相同
+                         field: 'username',
+                         message: '不能和用户名相同'
+                     },
+                     regexp: {//匹配规则
+                         regexp: /^[a-zA-Z0-9_\.]+$/,
+                         message: 'The username can only consist of alphabetical, number, dot and underscore'
+                     }
+                 }
+             },
+             email: {
+                 validators: {
+                     notEmpty: {
+                         message: '邮件不能为空'
+                     },
+                     emailAddress: {
+                         message: '请输入正确的邮件地址如：123@qq.com'
+                     }
+                 }
+             },
+             phone: {
+                 message: 'The phone is not valid',
+                 validators: {
+                     notEmpty: {
+                         message: '手机号码不能为空'
+                     },
+                     stringLength: {
+                         min: 11,
+                         max: 11,
+                         message: '请输入11位手机号码'
+                     },
+                     regexp: {
+                         regexp: /^1[3|5|8]{1}[0-9]{9}$/,
+                         message: '请输入正确的手机号码'
+                     }
+                 }
+             },
+             invite: {
+                 message: '邀请码',
+                 validators: {
+                     notEmpty: {
+                         message: '邀请码不能为空'
+                     },
+                     stringLength: {
+                         min: 6,
+                         max: 8,
+                         message: '请输入正确长度的邀请码'
+                     },
+                     threshold :  6 ,
+                     remote: {//ajax验证。server result:{"valid",true or false} 向服务发送当前input name值，获得一个json数据。例表示正确：{"valid",true}
+                         url: '/app/checkInvite',//验证地址
+                         message: '邀请码错误',//提示消息
+                         delay :  500,
+                         type: 'POST',//请求方式
+                         //自定义提交数据，默认值提交当前input value
+                         /*data: function(validator) {
+                               return {
+                                   vc: $('[name="invite"]').val(),
+                               };
+                            }*/
+                     },
+                     regexp: {
+                         regexp: /^[\w]{3}[\d]{3,5}$/,
+                         message: '请输入正确的邀请码(包含数字字母)'
+                     }
+                 }
+             },
+             vc: {//验证input项：验证规则
+                 message: '验证码错误',
+
+                 validators: {
+                     notEmpty: {//非空验证：提示消息
+                         message: '验证码不能为空'
+                     },
+                     stringLength: {
+                         min: 4,
+                         max: 4,
+                         message: '验证码长度为4'
+                     },
+                     threshold :  4 , //有3字符以上才发送ajax请求，（input中输入一个字符，插件会向服务器发送一次，设置限制，6字符以上才开始）
+                     remote: {//ajax验证。server result:{"valid",true or false} 向服务发送当前input name值，获得一个json数据。例表示正确：{"valid",true}
+                         url: 'app/verifycodeValid',//验证地址
+                         message: '验证码错误',//提示消息
+                         delay :  500,//每输入一个字符，就发ajax请求，服务器压力还是太大，设置2秒发送一次ajax（默认输入一个字符，提交一次，服务器压力太大）
+                         type: 'POST',//请求方式
+                         //自定义提交数据，默认值提交当前input value
+                         /*data: function(validator) {
+                               return {
+                                   vc: $('[name="vc"]').val(),
+                               };
+                            }*/
+                     },
+                     regexp: {
+                         regexp: /^[\w]{4}$/,
+                         message: '请输入正确格式的验证码'
+                     }
+                 }
+             },
+         }
+     });
+
+     //忘记密码规则
+    $('#forgetForm').bootstrapValidator({
+         message: 'This value is not valid',
+         feedbackIcons: {/*input状态样式图片*/
+             valid: 'glyphicon glyphicon-ok',
+             invalid: 'glyphicon glyphicon-remove',
+             validating: 'glyphicon glyphicon-refresh'
+         },
+         fields: {/*验证：规则*/
+             username: {//验证input项：验证规则
+                 message: 'The username is not valid',
+
+                 validators: {
+                     notEmpty: {//非空验证：提示消息
+                         message: '用户名不能为空'
+                     },
+                     stringLength: {
+                         min: 3,
+                         max: 5,
+                         message: '用户名长度必须为3-5位数'
+                     },
+                     threshold :  3 , //有3字符以上才发送ajax请求，（input中输入一个字符，插件会向服务器发送一次，设置限制，6字符以上才开始）
+                     regexp: {
+                         regexp: /^([1-9][0-9]*)$/,
+                         message: '用户名由数字组成'
+                     }
+                 }
+             },
+             password: {
+                 message:'密码无效',
+                 validators: {
+                     notEmpty: {
+                         message: '密码不能为空'
+                     },
+                     stringLength: {
+                         min: 6,
+                         max: 30,
+                         message: '密码长度必须在6到30之间'
+                     },
+                     identical: {//相同
+                         field: 'password', //需要进行比较的input name值
+                         message: '两次密码不一致'
+                     },
+                     different: {//不能和用户名相同
+                         field: 'username',//需要进行比较的input name值
+                         message: '不能和用户名相同'
+                     },
+                     regexp: {
+                         regexp: /^[a-zA-Z0-9_\.]+$/,
+                         message: 'The username can only consist of alphabetical, number, dot and underscore'
+                     }
+                 }
+             },
+             repassword: {
+                 message: '密码无效',
+                 validators: {
+                     notEmpty: {
+                         message: '用户名不能为空'
+                     },
+                     stringLength: {
+                         min: 6,
+                         max: 30,
+                         message: '密码长度必须在6到30之间'
+                     },
+                     identical: {//相同
+                         field: 'password',
+                         message: '两次密码不一致'
+                     },
+                     different: {//不能和用户名相同
+                         field: 'username',
+                         message: '不能和用户名相同'
+                     },
+                     regexp: {//匹配规则
+                         regexp: /^[a-zA-Z0-9_\.]+$/,
+                         message: 'The username can only consist of alphabetical, number, dot and underscore'
+                     }
+                 }
+             },
+             email: {
+                 validators: {
+                     notEmpty: {
+                         message: '邮件不能为空'
+                     },
+                     emailAddress: {
+                         message: '请输入正确的邮件地址如：123@qq.com'
+                     },
+
+                 }
+             },
+             phone: {
+                 message: 'The phone is not valid',
+                 validators: {
+                     notEmpty: {
+                         message: '手机号码不能为空'
+                     },
+                     stringLength: {
+                         min: 11,
+                         max: 11,
+                         message: '请输入11位手机号码'
+                     },
+                     regexp: {
+                         regexp: /^1[3|5|8]{1}[0-9]{9}$/,
+                         message: '请输入正确的手机号码'
+                     }
+                 }
+             },
+             invite: {
+                 message: '邀请码',
+                 validators: {
+                     notEmpty: {
+                         message: '邀请码不能为空'
+                     },
+                     stringLength: {
+                         min: 6,
+                         max: 8,
+                         message: '请输入正确长度的邀请码'
+                     },
+                     threshold :  6 ,
+                     },
+                     regexp: {
+                         regexp: /^[\w]{3}[\d]{3,5}$/,
+                         message: '请输入正确的邀请码(包含数字字母)'
+                     }
+                 },
+
+            vc: {//验证input项：验证规则
+                 message: '验证码错误',
+
+                 validators: {
+                     notEmpty: {//非空验证：提示消息
+                         message: '验证码不能为空'
+                     },
+                     stringLength: {
+                         min: 4,
+                         max: 4,
+                         message: '验证码长度为4'
+                     },
+                     threshold :  4 , //有3字符以上才发送ajax请求，（input中输入一个字符，插件会向服务器发送一次，设置限制，6字符以上才开始）
+                     remote: {//ajax验证。server result:{"valid",true or false} 向服务发送当前input name值，获得一个json数据。例表示正确：{"valid",true}
+                         url: 'app/verifycodeValid',//验证地址
+                         message: '验证码错误',//提示消息
+                         delay :  500,//每输入一个字符，就发ajax请求，服务器压力还是太大，设置2秒发送一次ajax（默认输入一个字符，提交一次，服务器压力太大）
+                         type: 'POST',//请求方式
+                         //自定义提交数据，默认值提交当前input value
+                         data: function(validator) {
+                               return {
+                                   vc: $('[name="vc"]').val(),
+                               };
+                            }
+                     },
+                     regexp: {
+                         regexp: /^[\w]{4}$/,
+                         message: '请输入正确格式的验证码'
+                     }
+                 }
+             },
+        }
+});
+
+        //封面获取
+        var new_src = '/static/img/advertisement/10001_advertisement.png'+'?t'+Math.random();
+        $('#cover').attr('src',new_src);
+
+
+        //刷新验证码
+         $('.verifycodeChange').css('cursor','pointer').click(function() {
+            $('.verifycode').attr('src',$('.verifycode').attr('src')+1)
+        });
+
+
+        //提交忘记表单
+         $("#forgetForm").find("input").change(function () {
+            $("#forgetForm").bootstrapValidator('validate');//提交验证
+
+                if ($("#forgetForm").data('bootstrapValidator').isValid()) {//获取验证结果，如果成功，执行下面代码
+                    //验证成功后的操作，如ajax
+                    $("#forgetSure").removeAttr("disabled");
+                    var no = $("#forgetName").val();
+                    var password = $("#new_password").val();
+                    var phone = $("#forgetPhone").val();
+                    var email = $("#forgetEmail").val();
+                    var invite = $("#forgetInvite").val();
+                    var vc = $('#forgetVc').val();
+                    $("#forgetSure").click(function () {
+                        $.ajax({
+                        url:"/app/checkForgetUser",
+                        type:"post",
+                        data:{'no':no,'password':password,'phone':phone,'email':email,'invite':invite,'vc':vc},
+                        success(arg){
+                            alert(arg);
+                            window.location.reload();
+                            }
+                        })
+                    })
+
+                }
+                else {
+                    $("#forgetSure").attr("disabled","disabled")
+                }
+
+        });
+
+         //提交注册表单
+         $("#defaultForm").find("input").change(function () {
+            $("#defaultForm").bootstrapValidator('validate');//提交验证
+                if ($("#defaultForm").data('bootstrapValidator').isValid()) {//获取验证结果，如果成功，执行下面代码
+                    //验证成功后的操作，如ajax
+                    $("#sure").removeAttr("disabled");
+                    var no = $("#username").val();
+                    var password = $("#password").val();
+                    var phone = $("#phone").val();
+                    var email = $("#email").val();
+                    var invite = $("#invite").val();
+                    var vc = $('#vc').val();
+                    $("#sure").click(function () {
+                        $.ajax({
+                        url:"/app/addCount",
+                        type:"post",
+                        data:{'no':no,'password':password,'phone':phone,'email':email,'invite':invite,'vc':vc},
+                        success(arg){
+                            alert(arg);
+                            window.location.reload();
+                            }
+                        })
+                    })
+
+                }
+                else {
+                    $("#sure")
+                }
+
+        });
+
+        //用户登陆
+    $("#log_btn").click(function () {
+        var radio =$("input[name='inlineRadioOptions']:checked").val();
+        var password = $("#inputPassword3").val();
+        var user = $("#user").val();
+        $.ajax({
+           url:'app/checkUser',
+           type:'post',
+           data:{'radio':radio,'password':password,'user':user},
+           success(arg){
+               if("no" ==arg){
+                   alert("用户密码错误！");
+                    return;
+               }
+               else {
+                    window.location.href='/index/home.html'
+               }
+
+           }
+        });
+    })
+
+
+})
+
+</script>
+</html>

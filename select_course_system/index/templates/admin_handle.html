@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>操作</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+	<link rel="stylesheet" href="../../static/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+	<link rel="stylesheet" href="../../static/assets/css/ready.css">
+	<link rel="stylesheet" href="../../static/assets/css/demo.css">
+	<link rel="stylesheet" href="../../static/assets/css/bootstrap-select.min.css" />
+	<link href="https://cdn.bootcss.com/bootstrap-validator/0.5.3/css/bootstrapValidator.css" rel="stylesheet">
+
+</head>
+<body>
+	<div class="wrapper">
+		<div class="main-header">
+			<div class="logo-header">
+				<a href="home.html" class="logo">
+					Select Course System
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
+			</div>
+			<nav class="navbar navbar-header navbar-expand-lg">
+				<div class="container-fluid">
+					
+					<form class="navbar-left navbar-form nav-search mr-md-3" action="">
+						<div class="input-group">
+							<input type="text" placeholder="Search ..." class="form-control">
+							<div class="input-group-append">
+								<span class="input-group-text">
+									<i class="la la-search search-icon"></i>
+								</span>
+							</div>
+						</div>
+					</form>
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item dropdown hidden-caret">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="la la-envelope"></i>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown hidden-caret">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="la la-user"></i>
+								<span class="notification">3</span>
+							</a>
+							<ul class="dropdown-menu notif-box" aria-labelledby="navbarDropdown">
+								<li>
+									<div class="dropdown-title">You have 4 new notification</div>
+								</li>
+								<li>
+									<div class="notif-center">
+										<a href="#">
+											<div class="notif-icon notif-primary"> <i class="la la-user-plus"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													New user registered
+												</span>
+												<span class="time">5 minutes ago</span> 
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-icon notif-success"> <i class="la la-comment"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													Rahmad commented on Admin
+												</span>
+												<span class="time">12 minutes ago</span> 
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-img"> 
+												<img src="../../static/assets/img/profile2.jpg" alt="Img Profile">
+											</div>
+											<div class="notif-content">
+												<span class="block">
+													Reza send messages to you
+												</span>
+												<span class="time">12 minutes ago</span> 
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-icon notif-danger"> <i class="la la-heart"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													Farrah liked Admin
+												</span>
+												<span class="time">17 minutes ago</span> 
+											</div>
+										</a>
+									</div>
+								</li>
+								<li>
+									<a class="see-all" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="la la-angle-right"></i> </a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+								{% if avatar %}
+                                    <img src="/{{avatar}}" alt="user-img" width="36" class="img-circle">
+                                {% else %}
+                                    <img src="../../static/assets/img/profile.jpg" alt="user-img" width="36" class="img-circle">
+                                {% endif %}
+								<span >{{name}}</span>
+							</a>
+							<ul class="dropdown-menu dropdown-user">
+								<li>
+									<div class="user-box">
+										<div class="u-img">
+											{% if avatar %}
+												<img src="/{{avatar}}" alt="user">
+											{% else %}
+												<img src="../../static/assets/img/profile.jpg" alt="user">
+											{% endif %}
+										</div>
+										<div class="u-text">
+											<h4>{{name}}</h4>
+											<p class="text-muted">{{email}}</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">个人信息</a></div>
+										</div>
+									</li>
+
+									
+									
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="/index/setting.html"><i class="ti-设置"></i> Account Setting</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="/index/logout"><i class="fa fa-power-off"></i> Logout</a>
+								</ul>
+								<!-- /.dropdown-user -->
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<div class="sidebar">
+				<div class="scrollbar-inner sidebar-wrapper">
+					<div class="user">
+						<div class="photo">
+							{% if avatar %}
+								<img src="/{{avatar}}">
+							{% else %}
+								<img src="../../static/assets/img/profile.jpg">
+							{% endif %}
+						</div>
+						<div class="info">
+							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+								<span>
+									{{name}}
+									<span class="user-level">{{radio}}</span>
+									<span class="caret"></span>
+								</span>
+							</a>
+							<div class="clearfix"></div>
+
+							<div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+								<ul class="nav">
+									<li>
+										<a href="/index/profile.html">
+											<span class="link-collapse">个人信息</span>
+										</a>
+									</li>
+									<li>
+										<a href="index/setting.html">
+											<span class="link-collapse">设置</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<ul class="nav">
+						<li class="nav-item">
+							<a href="home.html">
+								<i class="la la-dashboard"></i>
+								<p>查询</p>
+								
+							</a>
+						</li>
+						<li class="nav-item active">
+							<a href="student_handle.html">
+								<i class="la la-table"></i>
+								操作
+								
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a href="profile.html">
+								<i class="la la-user"></i>
+								<p>个人信息</p>
+								<span class="badge badge-success">2</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="setting.html">
+								<i class="la la-font"></i>
+								<p>设置</p>
+							</a>
+						</li>
+						<li class="nav-item update-pro">
+							<button  data-toggle="modal" onclick="changImg()" data-target="#advertisement">
+								<i class="la la-hand-pointer-o"></i>
+								<p class="lead">广 告 位</p>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="main-panel">
+				<div class="content">
+					<div class="container-fluid">
+						<h4 class="page-title">操作</h4>
+
+						<!--head-->
+						<div class="row">
+
+							<div class="col-md-4">
+								<div class="card card-stats card-warning " id ='h_special'>
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-newspaper-o"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">添加专业</p>
+													<h4 class="card-title">添加专业</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="card card-stats card-success " id="h_course">
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-check-circle"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">修改课程</p>
+													<h4 class="card-title">修改课程</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="card card-stats card-info" id="h_cclass">
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-pie-chart"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">修改班级</p>
+													<h4 class="card-title">添加/删除班级</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="card card-stats " id="h_teacher">
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-pie-chart text-warning"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">修改老师</p>
+													<h4 class="card-title">添加/删除老师</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="col-md-4">
+								<div class="card card-stats " id="h_student">
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-pie-chart text-success"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">修改学生</p>
+													<h4 class="card-title">添加/删除学生</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="col-md-4">
+								<div class="card card-stats " data-toggle='modal' data-target='#uploadAdvertisement'>
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-file-image-o text-success"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">更新广告</p>
+													<h4 class="card-title">上传图片</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- 添加模态框 -->
+							<div class="modal fade" id="uploadAdvertisement">
+							  <div class="modal-dialog modal-sm">
+								<div class="modal-content">
+								  <!-- 模态框头部 -->
+								  <div class="modal-header">
+									<h4 class="modal-title">上传图片</h4>
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+								  </div>
+								  <!-- 模态框主体 -->
+									<form id="form-avatar" action="/index/set_advertisement" method="post" enctype="multipart/form-data">
+									  <div class="modal-body">
+										<div class="form-group">
+											<p class="lead">选择图片</p>
+											<input type="file" name="advertisement">
+										</div>
+									  </div>
+									  <!-- 模态框底部 -->
+									  <div class="modal-footer">
+										<input type="submit" class="btn btn-success" onclick="changImg()"  value="上传">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+									  </div>
+									</form>
+								</div>
+							  </div>
+							</div>
+
+
+						</div>
+
+						<!--tbody-->
+						<!--&lt;!&ndash;修改专业&ndash;&gt;-->
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">修改专业</h4>
+										<p class="card-category">添加专业</p>
+									</div>
+									<div class="card-body">
+										<table class="table table-head-bg-success  table-hover">
+											<thead>
+												<tr>
+													<th scope="col"> </th>
+													<th scope="col">名称</th>
+													<th scope="col">该专业班级数量</th>
+													<th scope="col">班级名称</th>
+													<th scope="col">修改</th>
+												</tr>
+											</thead>
+											<tbody>
+												<!--院系下拉-->
+												<select class="selectpicker show-tick data-size='5' " id ='special' data-style="btn-primary" data-live-search="true">
+												</select>
+											</tbody>
+										</table>
+									</div>
+									<div class="card-footer">
+										<button type='button' class='btn btn-default btn-lg'data-toggle='modal' data-target='#addSpecialModal' ><i class="la la-plus"></i></button>
+									</div>
+									<!-- 详细模态框 -->
+									<div class="modal fade" id="specialModal">
+									  <div class="modal-dialog modal-sm">
+										<div class="modal-content">
+
+										  <!-- 模态框头部 -->
+										  <div class="modal-header">
+											<h4 class="modal-title">班级名单</h4>
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+										  </div>
+
+										  <!-- 模态框主体 -->
+										  <div class="modal-body">
+											<ol>
+
+											</ol>
+										  </div>
+
+										  <!-- 模态框底部 -->
+										  <div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+										  </div>
+
+										</div>
+									  </div>
+									</div>
+									<!-- 添加模态框 -->
+									<div class="modal fade" id="addSpecialModal">
+									  <div class="modal-dialog modal-sm">
+										<div class="modal-content">
+										  <!-- 模态框头部 -->
+										  <div class="modal-header">
+											<h4 class="modal-title">添加新专业</h4>
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+										  </div>
+										  <!-- 模态框主体 -->
+										  <div class="modal-body">
+											  <form id="special_form">
+												  <div class="form-group">
+													<label for="special_name">专业名称</label>
+													<input type="text" class="form-control" name="special_name" id="special_name" >
+												  </div>
+												  <select class="selectpicker show-tick data-size='5' " id ='add_special' data-style="btn-primary" data-live-search="true">
+												  </select>
+											  </form>
+										  </div>
+										  <!-- 模态框底部 -->
+										  <div class="modal-footer">
+											<button type="button" class="btn btn-primary" disabled='disabled' id="add_special_btn" data-dismiss="modal">添加</button>
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+										  </div>
+										</div>
+									  </div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<!--老师信息-->
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header ">
+										<h4 class="card-title">老师信息</h4>
+										<p class="card-category">按院系划分,删除会将数据库的注册表和相应表进行删除，添加只会添加相应表</p>
+									</div>
+									<div class="card-body " >
+										<table class="table table-head-bg-success  table-hover">
+											<thead>
+												<tr>
+													<th scope="col"> </th>
+													<th scope="col">工号</th>
+													<th scope="col">姓名</th>
+													<th scope="col">年龄</th>
+													<th scope="col">所属院系</th>
+													<th scope="col">是否注册</th>
+													<th scope="col">修改</th>
+												</tr>
+											</thead>
+											<tbody>
+												<!--院系下拉-->
+												<select class="selectpicker show-tick data-size='5' " id ='teacher' data-style="btn-primary" data-live-search="true">
+												</select>
+											</tbody>
+										</table>
+									</div>
+									<div class="card-footer">
+										<button type='button' class='btn btn-default btn-lg'data-toggle='modal' data-target='#addTeacherModal' ><i class="la la-plus"></i></button>
+									</div>
+									<!-- 模态框 -->
+									<div class="modal fade" id="addTeacherModal">
+									  <div class="modal-dialog modal-sm">
+										<div class="modal-content">
+										  <!-- 模态框头部 -->
+										  <div class="modal-header">
+											<h4 class="modal-title">添加新老师</h4>
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+										  </div>
+										  <!-- 模态框主体 -->
+										  <div class="modal-body">
+											  <form id="teacher_form">
+												  <div class="form-group">
+													<label for="teacher_no">工号</label>
+													<input type="text" class="form-control" name="teacher_no" id="teacher_no" placeholder="10XX">
+												  </div>
+												  <div class="form-group">
+													<label for="teacher_name">姓名</label>
+													<input type="text" class="form-control" name="teacher_name" id="teacher_name">
+												  </div>
+												  <div class="form-group">
+													<label for="teacher_age">年龄</label>
+													<input type="text" class="form-control" name ='teacher_age' id="teacher_age">
+												  </div>
+												  <select class="selectpicker show-tick data-size='5' " id ='add_teacher' data-style="btn-primary" data-live-search="true">
+												  </select>
+											  </form>
+										  </div>
+										  <!-- 模态框底部 -->
+										  <div class="modal-footer">
+											<button type="button" class="btn btn-primary" disabled='disabled' id="add_teacher_btn" data-dismiss="modal">添加</button>
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+										  </div>
+										</div>
+									  </div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+						<!--学生信息-->
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header ">
+										<h4 class="card-title">学生信息</h4>
+										<p class="card-category">按班级划分,删除会将数据库的注册表和相应表进行删除，添加只会添加相应表</p>
+									</div>
+									<div class="card-body">
+										<table class="table table-head-bg-success  table-hover">
+											<thead>
+												<tr>
+													<th scope="col"> </th>
+													<th scope="col">学号</th>
+													<th scope="col">姓名</th>
+													<th scope="col">年龄</th>
+													<th scope="col">所在班级</th>
+													<th scope="col">是否注册</th>
+													<th scope="col">修改</th>
+												</tr>
+											</thead>
+											<tbody>
+												<!--班级下拉-->
+												<select class="selectpicker show-tick data-size='5' "  id ='student' data-style="btn-primary" data-live-search="true">
+												</select>
+											</tbody>
+										</table>
+									</div>
+									<div class="card-footer">
+										<button type='button' class='btn btn-default btn-lg' data-toggle='modal' data-target='#addStudentModal'><i class="la la-plus"></i></button>
+									</div>
+									<!-- 模态框 -->
+									<div class="modal fade" id="addStudentModal">
+									  <div class="modal-dialog modal-sm">
+										<div class="modal-content">
+										  <!-- 模态框头部 -->
+										  <div class="modal-header">
+											<h4 class="modal-title">添加新学生</h4>
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+										  </div>
+										  <!-- 模态框主体 -->
+										  <div class="modal-body">
+											<form id="student_form">
+												  <div class="form-group">
+													<label for="teacher_no">学号</label>
+													<input type="text" class="form-control" name= "student_no" id="student_no" placeholder="1XX">
+												  </div>
+												  <div class="form-group">
+													<label for="student_name">姓名</label>
+													<input type="text" class="form-control" name="student_name" id="student_name">
+												  </div>
+												  <div class="form-group">
+													<label for="student_age">年龄</label>
+													<input type="text" class="form-control" name="student_age" id="student_age">
+												  </div>
+												  <select class="selectpicker show-tick data-size='5' " id ='add_student' data-style="btn-primary" data-live-search="true">
+												  </select>
+
+											  </form>
+										  </div>
+										  <!-- 模态框底部 -->
+										  <div class="modal-footer">
+											<button type="button" class="btn btn-primary" title="选择班级" disabled='disabled' id="add_student_btn" data-dismiss="modal">添加</button>
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+										  </div>
+										</div>
+									  </div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+						<!--课程信息-->
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header ">
+										<h4 class="card-title">课程信息</h4>
+										<p class="card-category">按老师划分，只能修改其学时和学分</p>
+									</div>
+									<div class="card-body">
+										<table class="table table-head-bg-success  table-hover">
+											<thead>
+												<tr>
+													<th scope="col"> </th>
+													<th scope="col">课程名</th>
+													<th scope="col">学时</th>
+													<th scope="col">学分</th>
+													<th scope="col">修改</th>
+												</tr>
+											</thead>
+											<tbody>
+												<!--注册下拉-->
+												<select class="selectpicker" id="course" data-style="btn-primary" data-live-search="true">
+												</select>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--班级信息-->
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header ">
+										<h4 class="card-title">班级信息</h4>
+										<p class="card-category">按专业划分,删除会将数据库的注册表和相应表进行删除，添加只会添加相应表</p>
+									</div>
+									<div class="card-body">
+										<table class="table table-head-bg-success  table-hover">
+											<thead>
+												<tr>
+													<th scope="col"> </th>
+													<th scope="col">班级</th>
+													<th scope="col">班级人数</th>
+													<th scope="col">学生姓名</th>
+													<th scope="col">修改</th>
+												</tr>
+											</thead>
+											<tbody>
+												<!--专业下拉-->
+												<select class="selectpicker" id="cclass" data-style="btn-primary" data-live-search="true">
+												</select>
+
+												<!-- 模态框 -->
+												<div class="modal fade" id="cclassModal">
+												  <div class="modal-dialog modal-sm">
+													<div class="modal-content">
+													  <!-- 模态框头部 -->
+													  <div class="modal-header">
+														<h4 class="modal-title">学生名单</h4>
+														<button type="button" class="close" data-dismiss="modal">&times;</button>
+													  </div>
+													  <!-- 模态框主体 -->
+													  <div class="modal-body">
+														<ol>
+
+														</ol>
+													  </div>
+													  <!-- 模态框底部 -->
+													  <div class="modal-footer">
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+													  </div>
+													</div>
+												  </div>
+												</div>
+
+											</tbody>
+										</table>
+									</div>
+									<div class="card-footer">
+										<button type='button' class='btn btn-default btn-lg' data-toggle='modal' data-target='#addCclassModal'><i class="la la-plus"></i></button>
+									</div>
+									<!-- 模态框 -->
+									<div class="modal fade" id="addCclassModal">
+									  <div class="modal-dialog modal-sm">
+										<div class="modal-content">
+										  <!-- 模态框头部 -->
+										  <div class="modal-header">
+											<h4 class="modal-title">添加新班级</h4>
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+										  </div>
+										  <!-- 模态框主体 -->
+										  <div class="modal-body">
+												<form id="cclass_form">
+												  <div class="form-group">
+													<label for="cclass_name">班级名</label>
+													<input type="text" class="form-control" name="cclass_name" id="cclass_name" placeholder="GZ18XX">
+												  </div>
+												  <select class="selectpicker show-tick data-size='5' " id ='add_cclass' data-style="btn-primary" data-live-search="true">
+												  </select>
+
+											  </form>
+										  </div>
+										  <!-- 模态框底部 -->
+										  <div class="modal-footer">
+											<button type="button" class="btn btn-primary" disabled='disabled' id="add_cclass_btn" data-dismiss="modal">添加</button>
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+										  </div>
+										</div>
+									  </div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+				<footer class="footer">
+					<div class="container-fluid">
+						<nav class="pull-left">
+							<ul class="nav">
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										Nothing
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										Nothing
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#license/#free-item">
+										Help
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<div class="copyright ml-auto">
+							2019, made with <i class="la la-heart heart text-danger"></i> by <a href="#">野指针</a> - Thank for your attention
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div>
+<!--广告位 模态框 -->
+	<div class="modal fade" id="advertisement">
+	  <div class="modal-dialog modal-lg">
+		<div class="modal-content">
+		  <!-- 模态框头部 -->
+		  <div class="modal-header">
+			<h4 class="modal-title">广告位</h4>
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+		  </div>
+		  <!-- 模态框主体 -->
+		  <div class="modal-body" >
+			<img src="" style="height: auto;width:100%;background-size:contain;" id="advertisement_img" class="img-rounded" alt="advertisement">
+		  </div>
+		  <!-- 模态框底部 -->
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+<!--悬浮按钮-->
+<div id="dg" style="z-index: 9999; position: fixed ! important; right: 50px; top: 650px;">
+<table width=""100% style="position: absolute; width:260px; right: 0px; top: 0px;">
+<button type="button" class="btn btn-default btn-lg" id="top">
+	<i class="la la-angle-double-up"></i>
+</button>
+</table>
+</div>
+
+</body>
+<script src="../../static/assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="../../static/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="../../static/assets/js/plugin/jquery.scrollTo/jquery.scrollTo.js"></script>
+<script src="../../static/assets/js/core/popper.min.js"></script>
+<script src="../../static/assets/js/core/bootstrap.min.js"></script>
+<script src="../../static/assets/js/plugin/chartist/chartist.min.js"></script>
+<script src="../../static/assets/js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
+<script src="../../static/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="../../static/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+<script src="../../static/assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="../../static/assets/js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
+<script src="../../static/assets/js/plugin/chart-circle/circles.min.js"></script>
+<script src="../../static/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="../../static/assets/js/ready.min.js"></script>
+<script src="../../static/assets/js/plugin/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="../../static/assets/js/plugin/bootstrap-select/i18n/defaults-zh_CN.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+<script>
+	//改广告图像url
+	function changImg(){
+	    var new_src = '/static/img/advertisement/10001_advertisement.png'+'?t'+Math.random();
+		$('#advertisement_img').attr("src",new_src)
+	}
+		//定位
+		$('#h_special').click(function () {
+			window.scrollTo('#special',300);
+        });
+		$('#h_course').click(function () {
+			window.scrollTo('#course',2350);
+        });
+		$('#h_cclass').click(function () {
+			window.scrollTo('#cclass',2550);
+        });
+		$('#h_teacher').click(function () {
+			window.scrollTo('#teacher',860);
+        });
+		$('#h_student').click(function () {
+			window.scrollTo('#student',1380);
+        });
+		$('#top').click(function () {
+			window.scrollTo(0,0);
+        });
+
+	// class modal
+	setTimeout(function () {
+		$('#cclassModal').on('show.bs.modal', function (event) {
+
+			var cclass_obj = event.relatedTarget;
+			var cclass = $(cclass_obj).parent().prev().prev().text();
+			$.ajax({
+				url:"admin_index_info",
+                type:"post",
+                data:{"interface":"modal","data":cclass,"from":"cclass"},
+				success:function (arg) {
+					if(arg){
+						var student = JSON.parse(arg);
+						$.each(student,function (count,value) {
+							$('#cclassModal').find(".modal-body ol").append("<li>"+value+"</li>")
+                        })
+					}
+					else {
+						alert('获取数据失败');
+						return
+					}
+                }
+			})
+		});
+		// hide cclass modal
+		$("#cclassModal").on('hidden.bs.modal', function (e) {
+			$('#cclassModal').find(".modal-body ol").children().remove();
+		});
+    },5*100);
+
+	// special modal
+	setTimeout(function () {
+		$('#specialModal').on('show.bs.modal', function (event) {
+			var special_obj = event.relatedTarget;
+			var special = $(special_obj).parent().prev().prev().text();
+			$.ajax({
+				url:"admin_index_info",
+                type:"post",
+                data:{"interface":"modal","data":special,"from":"special"},
+				success:function (arg) {
+					if(arg){
+						var cclass = JSON.parse(arg);
+						$.each(cclass,function (count,value) {
+						    console.log(value);
+							$('#specialModal').find(".modal-body ol").append("<li>"+value+"</li>")
+                        })
+					}
+					else {
+						alert('获取数据失败');
+						return
+					}
+                }
+			})
+		});
+		// hide special modal
+		$("#specialModal").on('hidden.bs.modal', function (e) {
+			$('#specialModal').find(".modal-body ol").children().remove();
+		});
+    },5*100);
+
+
+
+	//select_init interface
+	function select_init(select_obj,data){
+	    var id = select_obj.attr('id');
+	    $.ajax({
+			url:"admin_index_info",
+			type:"post",
+			data:data,
+			dataType:'json',
+			success:function (arg) {
+			    var select_option = arg;
+			    $.each(select_option,function (key,value) {
+					select_obj.append("<option value='"+value+"'>"+value+"</option>")
+
+                });
+				select_obj.selectpicker('refresh');
+			    select_obj.selectpicker('render');
+            }
+		})
+	}
+
+	//select change interface
+	function select_change(selectpicker_obj,data){
+	    //data:{"interface":"tbody","radio":radio,"current_select_value":current_select_value}
+		$.ajax({
+			url:"admin_index_info",
+			type:"post",
+			data:data,
+			success:function (arg) {
+				var counter = 0;
+				var tr_info = JSON.parse(arg);
+			    $(selectpicker_obj).parent().parent().find('tbody tr').remove();
+			    var id = selectpicker_obj.attr('id');
+			    if(id == 'course'){
+					for(var key in tr_info){
+				    counter +=1;
+					$(selectpicker_obj).parent().parent().find('tbody').append("<tr><td>"+counter+"</td><td>"+key+"</td><td>"+tr_info[key]['time']+"</td><td>"+tr_info[key]['credit']+"</td><td><button type='button' class='btn btn-primary btn-xs del_btn cou_btn' >编辑</button></td></tr>")
+					}
+				}
+				else if(id == 'special'){
+					for(var key in tr_info){
+				    counter +=1;
+					$(selectpicker_obj).parent().parent().find('tbody').append("<tr><td>"+counter+"</td><td>"+key+"</td><td>"+tr_info[key]['num']+"</td><td><button type='button' class='btn btn-link' data-toggle='modal' data-target='#specialModal'>详细</button></td><td><button type='button' class='btn btn-primary btn-xs del_btn spe_cou_btn' >删除</button></td></tr>")
+					}
+				}
+				else if(id =='cclass'){
+				    for(var key in tr_info){
+				    counter +=1;
+					$(selectpicker_obj).parent().parent().find('tbody').append("<tr><td>"+counter+"</td><td>"+key+"</td><td>"+tr_info[key]['num']+"</td><td><button type='button' class='btn btn-link' data-toggle='modal' data-target='#cclassModal'>详细</button></td><td><button type='button' class='btn btn-primary btn-xs del_btn spe_cou_btn' >删除</button></td></tr>")
+					}
+				}
+				else{
+				    //teacher/student
+			        for(var key in tr_info){
+				    counter +=1;
+					$(selectpicker_obj).parent().parent().find('tbody').append("<tr><td>"+counter+"</td><td>"+key+"</td><td>"+tr_info[key]['name']+"</td><td>"+tr_info[key]['age']+"</td><td>"+tr_info[key]['from']+"</td><td>"+tr_info[key]['register']+"</td><td><button type='button' class='btn btn-primary btn-xs del_btn tea_stu_btn' >删除</button></td></tr>")
+					}
+					turnIfRegister(selectpicker_obj)
+				}
+
+            	}
+			})
+	}
+
+
+	//all select init
+	$(function () {
+	    //teacher select
+	    select_init($('#teacher'),{"interface":"select_option","radio":"teacher"});
+	    //student select
+		select_init($('#student'),{"interface":"select_option","radio":"student"});
+		//course select
+		select_init($('#course'),{"interface":"select_option","radio":"course"});
+		//special
+		select_init($('#special'),{"interface":"select_option","radio":"special"});
+		//cclass select
+		select_init($('#cclass'),{"interface":"select_option","radio":"cclass"});
+
+		//add student/teacher/class/special select's option in modal
+		select_init($('#add_teacher'),{"interface":"select_option","radio":"teacher"});
+		select_init($('#add_student'),{"interface":"select_option","radio":"student"});
+		select_init($('#add_cclass'),{"interface":"select_option","radio":"cclass"});
+		select_init($('#add_special'),{"interface":"select_option","radio":"special"});
+    });
+
+
+
+
+
+	//init all tbody tr by first select(done)
+	setTimeout(function () {
+		var all_select = $('.selectpicker');
+		$.each(all_select,function (count,element) {
+		    var id = $(element).attr('id');
+		    var current_select_value= $(element).val();
+		    var data = {"interface":"tbody","radio":id,"current_select_value":current_select_value};
+			select_change($(this),data);
+
+        })
+    },3*100);
+
+
+	//add tbody tr (done)
+	$(function () {
+	    //when current_select_value change,get it's value and change the tbody
+	    $('.selectpicker').change(function () {
+
+			var select_type = $(this).val();
+			var radio = $(this).attr('id');
+			var current_select_value= $(this).val();
+			var data={"interface":"tbody","radio":radio,"current_select_value":current_select_value};
+			select_change($(this),data);
+			del_tea_stu();
+			del_spe_cou();
+
+        });
+
+    });
+
+	//when select change init all turnIfRegister
+	function turnIfRegister(select_obj){
+	    var all_tr = select_obj.parent().parent().find('tbody tr')
+		$.each(all_tr,function (count,obj) {
+		    var td_obj =$(obj).find('td:eq(5)');
+			if (td_obj.text() == 'yes'){
+			    td_obj.html('<i class="la la-check"></i>')
+			}
+			else if(td_obj.text() == 'no'){
+			    td_obj.html('<i class="la la-close"></i>')
+			}
+			else {
+			    td_obj.html('<i class="la la-exclamation-triangle"></i>')
+			}
+        })
+	}
+
+	//init all turnIfRegister(done)
+	setTimeout(function () {
+		var all_tr = $('.selectpicker').parent().parent().find('tbody tr')
+		$.each(all_tr,function (count,obj) {
+		    var td_obj =$(obj).find('td:eq(5)');
+			if (td_obj.text() == 'yes'){
+			    td_obj.html('<i class="la la-check"></i>')
+			}
+			else if(td_obj.text() == 'no'){
+			    td_obj.html('<i class="la la-close"></i>')
+			}
+			else {
+			    td_obj.html('<i class="la la-exclamation-triangle"></i>')
+			}
+        })
+
+    });
+
+	//init all del btn
+	setTimeout(function () {
+		del_spe_cou();
+		del_tea_stu();
+    },500);
+
+	//teacher/student del btn
+	function del_tea_stu(){
+	    setTimeout(function () {
+		$('.tea_stu_btn').click(function (e) {
+		var where = $(this).parent().parent().parent().parent().parent().find('.selectpicker').attr('id');
+		var no_obj = $(this).parent().parent().children()[1];
+		var no = $(no_obj).text();
+		var handle = 'delete';
+		var data ={'handle':handle,'where':where,'no':no};
+		if(confirm('确认删除:'+no)){
+			$.ajax({
+			url:"admin_handle_info",
+			type:"post",
+			data:data,
+			success:function (arg) {
+				if(arg == 'yes'){
+				    alert('删除操作成功');
+				    location.reload()
+				 		}
+				else if (arg =='no'){
+				    alert('删除操作失败');
+					location.reload()
+					}
+            	}
+			});
+		}else {
+		    return
+		}
+
+    	})
+    },500);
+	}
+
+	//special/courses del btn
+	function del_spe_cou(){
+	    setTimeout(function () {
+		$('.spe_cou_btn').click(function (e) {
+		var where = $(this).parent().parent().parent().parent().parent().find('.selectpicker').attr('id');
+		var name_obj = $(this).parent().parent().children()[1];
+		var name = $(name_obj).text();
+		var handle = 'delete';
+		var data ={'handle':handle,'where':where,'name':name};
+		if(confirm('确认删除:'+name)){
+			$.ajax({
+			url:"admin_handle_info",
+			type:"post",
+			data:data,
+			success:function (arg) {
+				if(arg == 'yes'){
+					alert('删除操作成功');
+					location.reload()
+						}
+				else if (arg =='no'){
+					alert('删除操作失败');
+					location.reload()
+					}
+			}
+		});
+		}else {
+			return
+		}
+
+
+    	})
+    },500);
+	}
+
+	//course edit btn
+	setTimeout(function () {
+		$('.cou_btn').one("click",function () {
+		    var course_obj=$(this).parent().parent().children('td');
+			var btn_parent = $(this).parent();
+			var course_name = $(course_obj[1]).text();
+			var course_time = $(course_obj[2]).text();
+			var course_credit = $(course_obj[3]).text();
+
+			$(course_obj[2]).width(100).html("<input type='text' id ='input_time'>").find("input").width(200).val(course_time);
+			$(course_obj[3]).width(100).html("<input type='text' id ='input_credit'>").find("input").width(200).val(course_credit);
+
+			$(this).html('确定');
+			$(btn_parent).append('<button type="button" style="margin-left: 10px" class="btn btn-default btn-xs" onclick="cancel(this)" >取消</button>');
+
+			this.onclick = function onclick(event) {
+					var time= $('#input_time').val();
+					var credit= $('#input_credit').val();
+					var handle = 'update';
+					var data ={'handle':handle,'where':'courses',"name":course_name,"time":time,'credit':credit};
+					$.ajax({
+						url:"admin_handle_info",
+						type:"post",
+						data:data,
+						success:function (arg) {
+							if(arg =='yes'){
+							    location.reload()
+							}
+							else {
+							    alert('更新失败')
+								location.reload()
+							}
+                        }
+					})
+
+					};
+
+
+			function cancel(obj) {
+				return
+			}
+			
+        });
+
+
+
+
+
+    },500);
+
+
+
+	//老师用户名规则
+    $('#teacher_form').bootstrapValidator({
+         message: 'This value is not valid',
+         feedbackIcons: {/*input状态样式图片*/
+             valid: 'glyphicon glyphicon-ok',
+             invalid: 'glyphicon glyphicon-remove',
+             validating: 'glyphicon glyphicon-refresh'
+         },
+         fields: {/*验证：规则*/
+             teacher_no: {//验证input项：验证规则
+                 message: 'The username is not valid',
+
+                 validators: {
+                     notEmpty: {//非空验证：提示消息
+                         message: '用户名不能为空'
+                     },
+                     stringLength: {
+                         min: 4,
+                         max: 4,
+                         message: '用户名长度必须为4位数'
+                     },
+                     threshold :  4 , //有3字符以上才发送ajax请求，（input中输入一个字符，插件会向服务器发送一次，设置限制，6字符以上才开始）
+					 remote: {//ajax验证。server result:{"valid",true or false} 向服务发送当前input name值，获得一个json数据。例表示正确：{"valid",true}
+                         url: '/index/admin_handle_modal',//验证地址
+                         message: '已存在',//提示消息
+                         delay :  500,
+                         type: 'POST',//请求方式
+
+                     },
+                     regexp: {
+                         regexp: /^([1-9][0-9]*)$/,
+                         message: '用户名由数字组成'
+                     }
+                 }
+             },
+			 teacher_age: {//验证input项：验证规则
+                 message: 'The username is not valid',
+
+                 validators: {
+                     notEmpty: {//非空验证：提示消息
+                         message: '年龄不能为空'
+                     },
+                     stringLength: {
+                         min: 2,
+                         max: 3,
+                         message: '用户名长度必须为2-3位数'
+                     },
+                     regexp: {
+                         regexp: /^([1-9][0-9]*)$/,
+                         message: '年龄由数字组成'
+                     }
+                 }
+             },
+
+
+        }
+});
+    //老师规则过关，点击按钮添加
+	$("#teacher_form").find("input").change(function () {
+	   $("#teacher_form").bootstrapValidator('validate');//提交验证
+		if ($("#teacher_form").data('bootstrapValidator').isValid()) {//获取验证结果，如果成功，执行下面代码
+			$('#add_teacher_btn').removeAttr("disabled");
+			var teacher_no = $("#teacher_no").val();
+			var teacher_name = $("#teacher_name").val();
+			var teacher_age = $("#teacher_age").val();
+			var institute = $("#add_teacher").val();
+			var data = {'handle':'add','where':'teacher','no':teacher_no,'name':teacher_name,'age':teacher_age,'institute':institute};
+			$("#add_teacher").change(function () {
+				institute = $(this).val();
+				data ={'handle':'add','where':'teacher','no':teacher_no,'name':teacher_name,'age':teacher_age,'institute':institute};
+            });
+
+			$("#add_teacher_btn").click(function () {
+
+				$.ajax({
+					url:"admin_handle_info",
+					type:"post",
+					data:data,
+					success:function (arg) {
+						if(arg=='yes'){
+						    location.reload()
+						}
+						else {
+						    alert('添加失败，该老师已存在');
+							return
+						}
+                    }
+				})
+            })
+		}
+		else {
+		     $("#add_teacher_btn").attr("disabled","disabled")
+		}
+	});
+
+	//专业用户名规则
+    $('#special_form').bootstrapValidator({
+         message: 'This value is not valid',
+         feedbackIcons: {/*input状态样式图片*/
+             valid: 'glyphicon glyphicon-ok',
+             invalid: 'glyphicon glyphicon-remove',
+             validating: 'glyphicon glyphicon-refresh'
+         },
+         fields: {/*验证：规则*/
+             special_name: {//验证input项：验证规则
+                 message: 'The name is not valid',
+
+                 validators: {
+                     notEmpty: {//非空验证：提示消息
+                         message: '专业名名不能为空'
+                     },
+                     stringLength: {
+                         min: 3,
+                         max: 18,
+                         message: '用户名长度必须为3-18位数'
+                     },
+					 threshold :  3 , //有3字符以上才发送ajax请求，（input中输入一个字符，插件会向服务器发送一次，设置限制，6字符以上才开始）
+					 remote: {//ajax验证。server result:{"valid",true or false} 向服务发送当前input name值，获得一个json数据。例表示正确：{"valid",true}
+                         url: '/index/admin_handle_modal',//验证地址
+                         message: '已存在',//提示消息
+                         delay :  500,
+                         type: 'POST',//请求方式
+
+                     },
+                     regexp: {
+                         regexp: /^(\w*)$/,
+                         message: '用户名由单词字符组成'
+                     }
+                 }
+             },
+        }
+	});
+
+     //专业规则过关，点击按钮添加
+	$("#special_form").find("input").change(function () {
+	   $("#special_form").bootstrapValidator('validate');//提交验证
+		if ($("#special_form").data('bootstrapValidator').isValid()) {//获取验证结果，如果成功，执行下面代码
+			$('#add_special_btn').removeAttr("disabled");
+			var special_name = $("#special_name").val();
+			var institute = $("#add_special").val();
+			var data ={'handle':'add','where':'special','name':special_name,'institute':institute};
+			$("#add_special").change(function () {
+				institute = $(this).val();
+				data ={'handle':'add','where':'special','name':special_name,'institute':institute};
+            });
+			$("#add_special_btn").click(function () {
+				$.ajax({
+					url:"admin_handle_info",
+					type:"post",
+					data:data,
+					success:function (arg) {
+						if(arg=='yes'){
+							location.reload()
+						}
+						else {
+						    alert('添加失败');
+							return
+						}
+                    }
+				})
+            })
+		}
+		else {
+		     $("#add_special_btn").attr("disabled","disabled")
+		}
+	});
+
+
+
+
+    //学生用户名规则
+    $('#student_form').bootstrapValidator({
+         message: 'This value is not valid',
+         feedbackIcons: {/*input状态样式图片*/
+             valid: 'glyphicon glyphicon-ok',
+             invalid: 'glyphicon glyphicon-remove',
+             validating: 'glyphicon glyphicon-refresh'
+         },
+         fields: {/*验证：规则*/
+             student_no: {//验证input项：验证规则
+                 message: 'The username is not valid',
+
+                 validators: {
+                     notEmpty: {//非空验证：提示消息
+                         message: '用户名不能为空'
+                     },
+                     stringLength: {
+                         min: 3,
+                         max: 3,
+                         message: '用户名长度必须为3位数'
+                     },
+                     threshold :  3 , //有3字符以上才发送ajax请求，（input中输入一个字符，插件会向服务器发送一次，设置限制，6字符以上才开始）
+					 remote: {//ajax验证。server result:{"valid",true or false} 向服务发送当前input name值，获得一个json数据。例表示正确：{"valid",true}
+                         url: '/index/admin_handle_modal',//验证地址
+                         message: '已存在',//提示消息
+                         delay :  500,
+                         type: 'POST',//请求方式
+
+                     },
+                     regexp: {
+                         regexp: /^([1-9][0-9]*)$/,
+                         message: '用户名由数字组成'
+                     }
+                 }
+             },
+			 student_age: {//验证input项：验证规则
+                 message: 'The username is not valid',
+
+                 validators: {
+                     notEmpty: {//非空验证：提示消息
+                         message: '年龄不能为空'
+                     },
+                     stringLength: {
+                         min: 2,
+                         max: 3,
+                         message: '用户名长度必须为2-3位数'
+                     },
+                     regexp: {
+                         regexp: /^([1-9][0-9]*)$/,
+                         message: '年龄由数字组成'
+                     }
+                 }
+             },
+        }
+	});
+
+    //学生规则过关，点击按钮添加
+	$("#student_form").find("input").change(function () {
+	   $("#student_form").bootstrapValidator('validate');//提交验证
+		if ($("#student_form").data('bootstrapValidator').isValid()) {//获取验证结果，如果成功，执行下面代码
+			$('#add_student_btn').removeAttr("disabled");
+			var student_no = $("#student_no").val();
+			var student_name = $("#student_name").val();
+			var student_age = $("#student_age").val();
+			var cclass = $("#add_student").val();
+			var data ={'handle':'add','where':'student','no':student_no,'name':student_name,'age':student_age,'cclass':cclass};
+			$("#add_student").change(function () {
+				cclass = $(this).val();
+				data ={'handle':'add','where':'student','no':student_no,'name':student_name,'age':student_age,'cclass':cclass};
+            });
+			$("#add_student_btn").click(function () {
+				$.ajax({
+					url:"admin_handle_info",
+					type:"post",
+					data:data,
+					success:function (arg) {
+						if(arg=='yes'){
+						location.reload()
+						}
+						else {
+						    alert('添加失败，该学生已存在');
+							return
+						}
+                    }
+				})
+            })
+		}
+		else {
+		     $("#add_student_btn").attr("disabled","disabled")
+		}
+	});
+
+    //班级规则
+    $('#cclass_form').bootstrapValidator({
+         message: 'This value is not valid',
+         feedbackIcons: {/*input状态样式图片*/
+             valid: 'glyphicon glyphicon-ok',
+             invalid: 'glyphicon glyphicon-remove',
+             validating: 'glyphicon glyphicon-refresh'
+         },
+         fields: {/*验证：规则*/
+             cclass_name: {//验证input项：验证规则
+                 message: 'The username is not valid',
+
+                 validators: {
+                     notEmpty: {//非空验证：提示消息
+                         message: '用户名不能为空'
+                     },
+                     stringLength: {
+                         min: 6,
+                         max: 6,
+                         message: '班级名开头为GZ，长度必须为6位数'
+                     },
+                     threshold :  6 , //有3字符以上才发送ajax请求，（input中输入一个字符，插件会向服务器发送一次，设置限制，6字符以上才开始）
+					 remote: {//ajax验证。server result:{"valid",true or false} 向服务发送当前input name值，获得一个json数据。例表示正确：{"valid",true}
+                         url: '/index/admin_handle_modal',//验证地址
+                         message: '已存在',//提示消息
+                         delay :  500,
+                         type: 'POST',//请求方式
+
+                     },
+                     regexp: {
+                         regexp: /^(GZ[1-9][0-9]*)$/,
+                         message: '用户名由字母和数字组成'
+                     }
+                 }
+             },
+
+        }
+	});
+
+    //班级规则过关，点击按钮添加
+	$("#cclass_form").find("input").change(function () {
+	   $("#cclass_form").bootstrapValidator('validate');//提交验证
+		if ($("#cclass_form").data('bootstrapValidator').isValid()) {//获取验证结果，如果成功，执行下面代码
+			$('#add_cclass_btn').removeAttr("disabled");
+			var cclass_name = $("#cclass_name").val();
+			var special = $('#add_cclass').val();
+			var data ={'handle':'add','where':'cclass','cclass':cclass_name,'special':special};
+
+			$("#add_cclass").change(function () {
+				special = $(this).val();
+				data ={'handle':'add','where':'cclass','cclass':cclass_name,'special':special};
+            });
+
+			$("#add_cclass_btn").click(function () {
+				$.ajax({
+					url:"admin_handle_info",
+					type:"post",
+					data:data,
+					success:function (arg) {
+						if(arg=='yes'){
+							location.reload()
+						}
+						else {
+						    alert('添加失败，该班级已存在');
+							return
+						}
+                    }
+				})
+            })
+		}
+		else {
+		     $("#add_cclass_btn").attr("disabled","disabled")
+		}
+	});
+
+</script>
+</html>

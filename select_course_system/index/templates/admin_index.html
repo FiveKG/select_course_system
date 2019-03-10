@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>首页</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+	<link rel="stylesheet" href="../../static/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+	<link rel="stylesheet" href="../../static/assets/css/ready.css">
+	<link rel="stylesheet" href="../../static/assets/css/demo.css">
+	<link rel="stylesheet" href="../../static/assets/css/bootstrap-select.min.css" />
+
+</head>
+<body>
+	<div class="wrapper">
+		<div class="main-header">
+			<div class="logo-header">
+				<a href="home.html" class="logo">
+					Select Course System
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
+			</div>
+			<nav class="navbar navbar-header navbar-expand-lg">
+				<div class="container-fluid">
+					
+					<form class="navbar-left navbar-form nav-search mr-md-3" action="">
+						<div class="input-group">
+							<input type="text" placeholder="Search ..." class="form-control">
+							<div class="input-group-append">
+								<span class="input-group-text">
+									<i class="la la-search search-icon"></i>
+								</span>
+							</div>
+						</div>
+					</form>
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item dropdown hidden-caret">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="la la-envelope"></i>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown hidden-caret">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="la la-user"></i>
+								<span class="notification">3</span>
+							</a>
+							<ul class="dropdown-menu notif-box" aria-labelledby="navbarDropdown">
+								<li>
+									<div class="dropdown-title">You have 4 new notification</div>
+								</li>
+								<li>
+									<div class="notif-center">
+										<a href="#">
+											<div class="notif-icon notif-primary"> <i class="la la-user-plus"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													New user registered
+												</span>
+												<span class="time">5 minutes ago</span> 
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-icon notif-success"> <i class="la la-comment"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													Rahmad commented on Admin
+												</span>
+												<span class="time">12 minutes ago</span> 
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-img">
+												<img src="../../static/assets/img/profile2.jpg" alt="Img Profile">
+											</div>
+											<div class="notif-content">
+												<span class="block">
+													Reza send messages to you
+												</span>
+												<span class="time">12 minutes ago</span> 
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-icon notif-danger"> <i class="la la-heart"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													Farrah liked Admin
+												</span>
+												<span class="time">17 minutes ago</span> 
+											</div>
+										</a>
+									</div>
+								</li>
+								<li>
+									<a class="see-all" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="la la-angle-right"></i> </a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+                                {% if avatar %}
+                                    <img src="/{{avatar}}" alt="user-img" width="36" class="img-circle">
+                                {% else %}
+                                    <img src="../../static/assets/img/profile.jpg" alt="user-img" width="36" class="img-circle">
+                                {% endif %}
+                                <span >{{name}}</span>
+                            </a>
+							<ul class="dropdown-menu dropdown-user">
+								<li>
+									<div class="user-box">
+										<div class="u-img">
+                                            {% if avatar %}
+												<img src="/{{avatar}}" alt="user">
+											{% else %}
+												<img src="../../static/assets/img/profile.jpg" alt="user">
+											{% endif %}
+                                        </div>
+										<div class="u-text">
+											<h4>{{name}}</h4>
+											<p class="text-muted">{{email}}</p><a href="#" class="btn btn-rounded btn-danger btn-sm">个人信息</a></div>
+										</div>
+									</li>
+									<div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="/index/setting.html"><i class="ti-设置"></i> Account Setting</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="/index/logout"><i class="fa fa-power-off"></i> Logout</a>
+								</ul>
+								<!-- /.dropdown-user -->
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<div class="sidebar">
+				<div class="scrollbar-inner sidebar-wrapper">
+					<div class="user">
+						<div class="photo">
+							{% if avatar %}
+								<img src="/{{avatar}}">
+							{% else %}
+								<img src="../../static/assets/img/profile.jpg">
+							{% endif %}
+                            <span >{{name}}</span>
+						</div>
+						<div class="info">
+							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+								<span>
+									{{name}}
+									<span class="user-level">{{radio}}</span>
+									<span class="caret"></span>
+								</span>
+							</a>
+							<div class="clearfix"></div>
+
+							<div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+								<ul class="nav">
+									<li>
+										<a href="/index/profile.html">
+											<span class="link-collapse">个人信息</span>
+										</a>
+									</li>
+									<li>
+										<a href="index/setting.html">
+											<span class="link-collapse">设置</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<ul class="nav">
+						<li class="nav-item active">
+							<a href="home.html">
+								<i class="la la-dashboard"></i>
+								<p>查询</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="student_handle.html">
+								<i class="la la-table"></i>
+								操作
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a href="profile.html">
+								<i class="la la-user"></i>
+								<p>个人信息</p>
+								<span class="badge badge-success">2</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="setting.html">
+								<i class="la la-cog"></i>
+								<p>设置</p>
+							</a>
+						</li>
+
+						<li class="nav-item update-pro">
+							<button  data-toggle="modal" onclick="changImg()" data-target="#advertisement">
+								<i class="la la-hand-pointer-o"></i>
+								<p class="lead">广 告 位</p>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="main-panel">
+				<div class="content">
+					<div class="container-fluid">
+						<h4 class="page-title">查询</h4>
+						<div class="row">
+							<div class="col-md-3">
+								<div class="card card-stats card-warning">
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-users"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">工号</p>
+													<h4 class="card-title">{{head_no}}</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="card card-stats card-success h_institute" id = 'h_institute' >
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-bar-chart"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category" >院系</p>
+													<h4 class="card-title">{{head_institute}}</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="card card-stats card-danger" id = 'h_special'>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-newspaper-o"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category" >专业</p>
+													<h4 class="card-title">{{head_special}}</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="card card-stats card-primary" id = 'h_course'>
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-check-circle"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category" >课程</p>
+													<h4 class="card-title">{{head_course}}</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="card card-stats "id = 'h_cclass'>
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center icon-warning">
+													<i class="la la-pie-chart text-warning"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category" >班级</p>
+													<h4 class="card-title">{{head_class}}</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="card card-stats" id = 'h_register'>
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-bank text-success"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category" >已注册</p>
+													<h4 class="card-title">{{head_register}}</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="card card-stats" id = 'h_teacher'>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-cc text-danger"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category" >老师</p>
+													<h4 class="card-title">{{head_teacher}}</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="card card-stats" id = 'h_student'>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-heart-o text-primary"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">学生</p>
+													<h4 class="card-title">{{head_student}}</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--学院信息-->
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card" id="institute">
+									<div class="card-header ">
+										<h4 class="card-title">院系信息</h4>
+										<p class="card-category">院系信息</p>
+									</div>
+									<div class="card-body">
+										<table class="table table-head-bg-success  table-hover">
+											<thead>
+												<tr>
+													<th scope="col"> </th>
+													<th scope="col">院系</th>
+													<th scope="col">专业数目</th>
+													<th scope="col">专业名称</th>
+												</tr>
+											</thead>
+											<tbody>
+												{%for institute in institute_info%}
+													<tr>
+														<td>{{forloop.counter}}</td>
+														{%for key,values in institute.items%}
+															<td>{{key}}</td>
+															<td>{{values}}</td>
+															<td>
+																<!-- 按钮：用于打开模态框 -->
+																<button type="button" class="btn btn-link" data-toggle="modal" data-target="#instituteModal">详细</button>
+															</td>
+																<!-- 模态框 -->
+																<div class="modal fade" id="instituteModal">
+																  <div class="modal-dialog modal-sm">
+																	<div class="modal-content">
+
+																	  <!-- 模态框头部 -->
+																	  <div class="modal-header">
+																		<h4 class="modal-title">专业名单</h4>
+																		<button type="button" class="close" data-dismiss="modal">&times;</button>
+																	  </div>
+
+																	  <!-- 模态框主体 -->
+																	  <div class="modal-body">
+																		<ol>
+
+																		</ol>
+																	  </div>
+
+																	  <!-- 模态框底部 -->
+																	  <div class="modal-footer">
+																		<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+																	  </div>
+
+																	</div>
+																  </div>
+																</div>
+
+														{%endfor%}
+													</tr>
+												{% empty %}
+													<tr>
+														<td>1</td>
+														<td>查无院系</td>
+														<td> </td>
+														<td> </td>
+													</tr>
+												{% endfor %}
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--专业信息-->
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header ">
+										<h4 class="card-title">老师信息</h4>
+										<p class="card-category">按院系划分</p>
+									</div>
+									<div class="card-body " >
+										<table class="table table-head-bg-success  table-hover">
+											<thead>
+												<tr>
+													<th scope="col"> </th>
+													<th scope="col">工号</th>
+													<th scope="col">姓名</th>
+													<th scope="col">年龄</th>
+													<th scope="col">所属院系</th>
+													<th scope="col">是否注册</th>
+												</tr>
+											</thead>
+											<tbody>
+												<!--注册下拉-->
+												<select class="selectpicker show-tick data-size='5' " id ='teacher' data-style="btn-primary" data-live-search="true">
+												</select>
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--学生信息-->
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header ">
+										<h4 class="card-title">学生信息</h4>
+										<p class="card-category">按班级划分</p>
+									</div>
+									<div class="card-body">
+										<table class="table table-head-bg-success  table-hover">
+											<thead>
+												<tr>
+													<th scope="col"> </th>
+													<th scope="col">学号</th>
+													<th scope="col">姓名</th>
+													<th scope="col">年龄</th>
+													<th scope="col">所在班级</th>
+													<th scope="col">是否注册</th>
+												</tr>
+											</thead>
+											<tbody>
+												<!--注册下拉-->
+												<select class="selectpicker show-tick data-size='5' " id ='student' data-style="btn-primary" data-live-search="true">
+												</select>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--未/注册名单-->
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header ">
+										<h4 class="card-title">注册信息</h4>
+										<p class="card-category">按未/注册划分</p>
+									</div>
+									<div class="card-body">
+										<table class="table table-head-bg-success  table-hover">
+											<thead>
+												<tr>
+													<th scope="col"> </th>
+													<th scope="col">学号/工号</th>
+													<th scope="col">姓名</th>
+													<th scope="col">年龄</th>
+													<th scope="col">所在班级/院系</th>
+													<th scope="col">是否注册</th>
+												</tr>
+											</thead>
+											<tbody>
+												<!--注册下拉-->
+												<select class="selectpicker" id="register" data-style="btn-primary" data-live-search="true">
+													<option value="registered_student">已注册学生</option>
+													<option value="registered_teacher">已注册老师</option>
+													<option value="unregister_student">未注册学生</option>
+													<option value="unregister_teacher">未注册老师</option>
+												</select>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--课程信息-->
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header ">
+										<h4 class="card-title">课程信息</h4>
+										<p class="card-category">按老师划分</p>
+									</div>
+									<div class="card-body">
+										<table class="table table-head-bg-success  table-hover">
+											<thead>
+												<tr>
+													<th scope="col"> </th>
+													<th scope="col">课程名</th>
+													<th scope="col">学时</th>
+													<th scope="col">学分</th>
+												</tr>
+											</thead>
+											<tbody>
+												<!--注册下拉-->
+												<select class="selectpicker" id="course" data-style="btn-primary" data-live-search="true">
+												</select>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--专业信息-->
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header ">
+										<h4 class="card-title">专业信息</h4>
+										<p class="card-category">按学院划分</p>
+									</div>
+									<div class="card-body">
+										<table class="table table-head-bg-success  table-hover">
+											<thead>
+												<tr>
+													<th scope="col"> </th>
+													<th scope="col">专业名</th>
+													<th scope="col">班级数量</th>
+													<th scope="col">班级名称</th>
+												</tr>
+											</thead>
+											<tbody>
+												<!--注册下拉-->
+												<select class="selectpicker" id="special" data-style="btn-primary" data-live-search="true">
+												</select>
+												<!-- 模态框 -->
+												<div class="modal fade" id="specialModal">
+												  <div class="modal-dialog modal-sm">
+													<div class="modal-content">
+
+													  <!-- 模态框头部 -->
+													  <div class="modal-header">
+														<h4 class="modal-title">班级名单</h4>
+														<button type="button" class="close" data-dismiss="modal">&times;</button>
+													  </div>
+
+													  <!-- 模态框主体 -->
+													  <div class="modal-body">
+														<ol>
+
+														</ol>
+													  </div>
+
+													  <!-- 模态框底部 -->
+													  <div class="modal-footer">
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+													  </div>
+
+													</div>
+												  </div>
+												</div>
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--班级信息-->
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header ">
+										<h4 class="card-title">班级信息</h4>
+										<p class="card-category">按专业划分</p>
+									</div>
+									<div class="card-body">
+										<table class="table table-head-bg-success  table-hover">
+											<thead>
+												<tr>
+													<th scope="col"> </th>
+													<th scope="col">班级</th>
+													<th scope="col">班级人数</th>
+													<th scope="col">学生姓名</th>
+												</tr>
+											</thead>
+											<tbody>
+												<!--注册下拉-->
+												<select class="selectpicker" id="cclass" data-style="btn-primary" data-live-search="true">
+												</select>
+
+												<!-- 模态框 -->
+												<div class="modal fade" id="cclassModal">
+												  <div class="modal-dialog modal-sm">
+													<div class="modal-content">
+
+													  <!-- 模态框头部 -->
+													  <div class="modal-header">
+														<h4 class="modal-title">学生名单</h4>
+														<button type="button" class="close" data-dismiss="modal">&times;</button>
+													  </div>
+
+													  <!-- 模态框主体 -->
+													  <div class="modal-body">
+														<ol>
+
+														</ol>
+													  </div>
+
+													  <!-- 模态框底部 -->
+													  <div class="modal-footer">
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+													  </div>
+
+													</div>
+												  </div>
+												</div>
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<footer class="footer">
+					<div class="container-fluid">
+						<nav class="pull-left">
+							<ul class="nav">
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										Nothing
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										Nothing
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#license/#free-item">
+										Help
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<div class="copyright ml-auto">
+							2019, made with <i class="la la-heart heart text-danger"></i> by <a href="#">野指针</a> - Thank for your attention
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div>
+
+	<!--广告位 模态框 -->
+	<div class="modal fade" id="advertisement">
+	  <div class="modal-dialog modal-lg">
+		<div class="modal-content">
+		  <!-- 模态框头部 -->
+		  <div class="modal-header">
+			<h4 class="modal-title">广告位</h4>
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+		  </div>
+		  <!-- 模态框主体 -->
+		  <div class="modal-body" >
+			<img src="" style="height: auto;width:100%;background-size:contain;" class="img-rounded"  id ="advertisement_img" alt="advertisement">
+		  </div>
+		  <!-- 模态框底部 -->
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+<!--悬浮按钮-->
+<div id="dg" style="z-index: 9999; position: fixed ! important; right: 50px; top: 650px;">
+<table width=""100% style="position: absolute; width:260px; right: 0px; top: 0px;">
+<button type="button" class="btn btn-default btn-lg" id="top">
+	<i class="la la-angle-double-up"></i>
+</button>
+</table>
+</div>
+
+
+</body>
+<script src="../../static/assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="../../static/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="../../static/assets/js/plugin/jquery.scrollTo/jquery.scrollTo.js"></script>
+<script src="../../static/assets/js/core/popper.min.js"></script>
+<script src="../../static/assets/js/core/bootstrap.min.js"></script>
+<script src="../../static/assets/js/plugin/chartist/chartist.min.js"></script>
+<script src="../../static/assets/js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
+<script src="../../static/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="../../static/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+<script src="../../static/assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="../../static/assets/js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
+<script src="../../static/assets/js/plugin/chart-circle/circles.min.js"></script>
+<script src="../../static/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="../../static/assets/js/ready.min.js"></script>
+<script src="../../static/assets/js/demo.js"></script>
+<script src="../../static/assets/js/plugin/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="../../static/assets/js/plugin/bootstrap-select/i18n/defaults-zh_CN.min.js"></script>
+<script>
+	//改广告图像url
+	function changImg(){
+	    var new_src = '/static/img/advertisement/10001_advertisement.png'+'?t'+Math.random();
+		$('#advertisement_img').attr("src",new_src)
+	}
+
+	//head location,scrollTo.js
+	$(function () {
+		$('#h_institute').click(function () {
+			window.scrollTo('#institute',300);
+        });
+		$('#h_special').click(function () {
+			window.scrollTo('#special',2500);
+        });
+		$('#h_course').click(function () {
+			window.scrollTo('#course',2150);
+        });
+		$('#h_cclass').click(function () {
+			window.scrollTo('#cclass',2980);
+        });
+		$('#h_register').click(function () {
+			window.scrollTo('#register',1870);
+        });
+		$('#h_teacher').click(function () {
+			window.scrollTo('#teacher',700);
+        });
+		$('#h_student').click(function () {
+			window.scrollTo('#student',1120);
+        });
+		$('#top').click(function () {
+			window.scrollTo(0,0);
+        });
+    });
+
+	// institute modal
+	$('#instituteModal').on('show.bs.modal', function (event) {
+			var institute_obj = event.relatedTarget;
+			var institute = $(institute_obj).parent().prev().prev().text();
+		$.ajax({
+                url:"admin_index_info",
+                type:"post",
+                data:{"interface":"modal","data":institute,"from":"institute"},
+                success:function (arg) {
+                    if (arg){
+						var special = JSON.parse(arg);
+
+						for (var i = 0; i < special.length; i++)
+						{
+							$('#instituteModal').find(".modal-body ol").append("<li>"+special[i]+"</li>")
+						}
+					}
+					else {
+					    alert('获取数据失败');
+						return
+					}
+                }
+            })
+    });
+	// hide institute modal
+	$("#instituteModal").on('hidden.bs.modal', function (e) {
+  		$('#instituteModal').find(".modal-body ol").children().remove();
+	});
+
+
+	// special modal
+	setTimeout(function () {
+		$('#specialModal').on('show.bs.modal', function (event) {
+			var special_obj = event.relatedTarget;
+			var special = $(special_obj).parent().prev().prev().text();
+			$.ajax({
+				url:"admin_index_info",
+                type:"post",
+                data:{"interface":"modal","data":special,"from":"special"},
+				success:function (arg) {
+					if(arg){
+						var cclass = JSON.parse(arg);
+						$.each(cclass,function (count,value) {
+						    console.log(value);
+							$('#specialModal').find(".modal-body ol").append("<li>"+value+"</li>")
+                        })
+					}
+					else {
+						alert('获取数据失败');
+						return
+					}
+                }
+			})
+		});
+		// hide special modal
+		$("#specialModal").on('hidden.bs.modal', function (e) {
+			$('#specialModal').find(".modal-body ol").children().remove();
+		});
+    },5*100);
+
+	// class modal
+	setTimeout(function () {
+		$('#cclassModal').on('show.bs.modal', function (event) {
+
+			var cclass_obj = event.relatedTarget;
+			var cclass = $(cclass_obj).parent().prev().prev().text();
+			$.ajax({
+				url:"admin_index_info",
+                type:"post",
+                data:{"interface":"modal","data":cclass,"from":"cclass"},
+				success:function (arg) {
+					if(arg){
+						var student = JSON.parse(arg);
+						$.each(student,function (count,value) {
+							$('#cclassModal').find(".modal-body ol").append("<li>"+value+"</li>")
+                        })
+					}
+					else {
+						alert('获取数据失败');
+						return
+					}
+                }
+			})
+		});
+		// hide class modal
+		$("#cclassModal").on('hidden.bs.modal', function (e) {
+			$('#cclassModal').find(".modal-body ol").children().remove();
+		});
+    },5*100);
+
+
+	//select_init interface
+	function select_init(select_obj,data){
+	    var id = select_obj.attr('id');
+	    $.ajax({
+			url:"admin_index_info",
+			type:"post",
+			data:data,
+			dataType:'json',
+			success:function (arg) {
+			    var select_option = arg;
+			    $.each(select_option,function (key,value) {
+					select_obj.append("<option value='"+value+"'>"+value+"</option>")
+
+                });
+				select_obj.selectpicker('refresh');
+			    select_obj.selectpicker('render');
+            }
+		})
+	}
+
+	//select change interface
+	function select_change(selectpicker_obj,data){
+	    //data:{"interface":"tbody","radio":radio,"current_select_value":current_select_value}
+		$.ajax({
+			url:"admin_index_info",
+			type:"post",
+			data:data,
+			success:function (arg) {
+				var counter = 0;
+				var tr_info = JSON.parse(arg);
+			    $(selectpicker_obj).parent().parent().find('tbody tr').remove();
+			    var id = selectpicker_obj.attr('id');
+			    if(id == 'course'){
+					for(var key in tr_info){
+				    counter +=1;
+					$(selectpicker_obj).parent().parent().find('tbody').append("<tr><td>"+counter+"</td><td>"+key+"</td><td>"+tr_info[key]['time']+"</td><td>"+tr_info[key]['credit']+"</td></tr>")
+					}
+				}
+				else if(id == 'special'){
+					for(var key in tr_info){
+				    counter +=1;
+					$(selectpicker_obj).parent().parent().find('tbody').append("<tr><td>"+counter+"</td><td>"+key+"</td><td>"+tr_info[key]['num']+"</td><td><button type='button' class='btn btn-link' data-toggle='modal' data-target='#specialModal'>详细</button></td></tr>")
+					}
+				}
+				else if(id =='cclass'){
+				    for(var key in tr_info){
+				    counter +=1;
+					$(selectpicker_obj).parent().parent().find('tbody').append("<tr><td>"+counter+"</td><td>"+key+"</td><td>"+tr_info[key]['num']+"</td><td><button type='button' class='btn btn-link' data-toggle='modal' data-target='#cclassModal'>详细</button></td></tr>")
+					}
+				}
+				else{
+			        for(var key in tr_info){
+				    counter +=1;
+					$(selectpicker_obj).parent().parent().find('tbody').append("<tr><td>"+counter+"</td><td>"+key+"</td><td>"+tr_info[key]['name']+"</td><td>"+tr_info[key]['age']+"</td><td>"+tr_info[key]['from']+"</td><td>"+tr_info[key]['register']+"</td></tr>")
+					}
+					turnIfRegister(selectpicker_obj)
+				}
+
+            	}
+
+			})
+	}
+
+	//all select init
+	$(function () {
+	    //teacher select
+	    select_init($('#teacher'),{"interface":"select_option","radio":"teacher"});
+	    //student select
+		select_init($('#student'),{"interface":"select_option","radio":"student"});
+		//course select
+		select_init($('#course'),{"interface":"select_option","radio":"course"});
+		//special select
+		select_init($('#special'),{"interface":"select_option","radio":"special"});
+		//cclass select
+		select_init($('#cclass'),{"interface":"select_option","radio":"cclass"});
+
+    });
+
+
+
+	//init all tbody tr by first select(done)
+	setTimeout(function () {
+		var all_select = $('.selectpicker');
+		$.each(all_select,function (count,element) {
+		    var id = $(element).attr('id');
+		    var current_select_value= $(element).val();
+		    var data = {"interface":"tbody","radio":id,"current_select_value":current_select_value};
+			select_change($(this),data);
+        })
+    },3*100);
+
+
+	//add tbody tr (done)
+	$(function () {
+	    //when current_select_value change,get it's value and change the tbody
+	    $('.selectpicker').change(function () {
+			var select_type = $(this).val();
+			var radio = $(this).attr('id');
+			var current_select_value= $(this).val();
+			var data={"interface":"tbody","radio":radio,"current_select_value":current_select_value};
+			select_change($(this),data);
+        });
+
+    });
+
+	//when select change init all turnIfRegister
+	function turnIfRegister(select_obj){
+	    var all_tr = select_obj.parent().parent().find('tbody tr')
+		$.each(all_tr,function (count,obj) {
+		    var td_obj =$(obj).find('td:eq(5)');
+			if (td_obj.text() == 'yes'){
+			    td_obj.html('<i class="la la-check"></i>')
+			}
+			else if(td_obj.text() == 'no'){
+			    td_obj.html('<i class="la la-close"></i>')
+			}
+			else {
+			    td_obj.html('<i class="la la-exclamation-triangle"></i>')
+			}
+        })
+	}
+
+	//init all turnIfRegister(done)
+	setTimeout(function () {
+		var all_tr = $('.selectpicker').parent().parent().find('tbody tr')
+		$.each(all_tr,function (count,obj) {
+		    var td_obj =$(obj).find('td:eq(5)');
+		    console.log(td_obj).text()
+			if (td_obj.text() == 'yes'){
+			    td_obj.html('<i class="la la-check"></i>')
+			}
+			else if(td_obj.text() == 'no'){
+			    td_obj.html('<i class="la la-close"></i>')
+			}
+			else {
+			    td_obj.html('<i class="la la-exclamation-triangle"></i>')
+			}
+        })
+
+    });
+
+</script>
+</html>

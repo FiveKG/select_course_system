@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>Components - Ready Bootstrap Dashboard</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+	<link rel="stylesheet" href="../../static/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+	<link rel="stylesheet" href="../../static/assets/css/ready.css">
+	<link rel="stylesheet" href="../../static/assets/css/demo.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="main-header">
+			<div class="logo-header">
+				<a href="home.html" class="logo">
+					Seltec Course System
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
+			</div>
+			<nav class="navbar navbar-header navbar-expand-lg">
+				<div class="container-fluid">
+					
+					<form class="navbar-left navbar-form nav-search mr-md-3" action="">
+						<div class="input-group">
+							<input type="text" placeholder="Search ..." class="form-control">
+							<div class="input-group-append">
+								<span class="input-group-text">
+									<i class="la la-search search-icon"></i>
+								</span>
+							</div>
+						</div>
+					</form>
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item dropdown hidden-caret">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="la la-envelope"></i>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown hidden-caret">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="la la-user"></i>
+								<span class="notification">3</span>
+							</a>
+							<ul class="dropdown-menu notif-box" aria-labelledby="navbarDropdown">
+								<li>
+									<div class="dropdown-title">You have 4 new notification</div>
+								</li>
+								<li>
+									<div class="notif-center">
+										<a href="#">
+											<div class="notif-icon notif-primary"> <i class="la la-user-plus"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													New user registered
+												</span>
+												<span class="time">5 minutes ago</span> 
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-icon notif-success"> <i class="la la-comment"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													Rahmad commented on Admin
+												</span>
+												<span class="time">12 minutes ago</span> 
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-img"> 
+												<img src="../../static/assets/img/profile2.jpg" alt="Img Profile">
+											</div>
+											<div class="notif-content">
+												<span class="block">
+													Reza send messages to you
+												</span>
+												<span class="time">12 minutes ago</span> 
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-icon notif-danger"> <i class="la la-heart"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													Farrah liked Admin
+												</span>
+												<span class="time">17 minutes ago</span> 
+											</div>
+										</a>
+									</div>
+								</li>
+								<li>
+									<a class="see-all" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="la la-angle-right"></i> </a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+								{% if avatar %}
+                                    <img src="/{{avatar}}" alt="user-img" width="36" class="img-circle">
+                                {% else %}
+                                    <img src="../../static/assets/img/profile.jpg" alt="user-img" width="36" class="img-circle">
+                                {% endif %}
+								<span >{{name}}</span>
+							</a>
+							<ul class="dropdown-menu dropdown-user">
+								<li>
+									<div class="user-box">
+										<div class="u-img">
+											{% if avatar %}
+												<img src="/{{avatar}}" alt="user">
+											{% else %}
+												<img src="../../static/assets/img/profile.jpg" alt="user">
+											{% endif %}
+										</div>
+										<div class="u-text">
+											<h4>{{name}}</h4>
+											<p class="text-muted">{{email}}</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">个人信息</a></div>
+										</div>
+									</li>
+
+									
+									
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="/index/setting.html"><i class="ti-设置"></i> Account Setting</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="/index/logout"><i class="fa fa-power-off"></i> Logout</a>
+								</ul>
+								<!-- /.dropdown-user -->
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<div class="sidebar">
+				<div class="scrollbar-inner sidebar-wrapper">
+					<div class="user">
+						<div class="photo">
+							{% if avatar %}
+								<img src="/{{avatar}}">
+							{% else %}
+								<img src="../../static/assets/img/profile.jpg">
+							{% endif %}
+						</div>
+						<div class="info">
+							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+								<span>
+									{{name}}
+									<span class="user-level">{{radio}}</span>
+									<span class="caret"></span>
+								</span>
+							</a>
+							<div class="clearfix"></div>
+
+							<div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+								<ul class="nav">
+									<li>
+										<a href="/index/profile.html">
+											<span class="link-collapse">个人信息</span>
+										</a>
+									</li>
+									<li>
+										<a href="index/setting.html">
+											<span class="link-collapse">设置</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<ul class="nav">
+						<li class="nav-item">
+							<a href="home.html">
+								<i class="la la-dashboard"></i>
+								<p>查询</p>
+							</a>
+						</li>
+						<li class="nav-item active">
+							<a href="student_handle.html">
+								<i class="la la-table"></i>
+								操作
+								
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="profile.html">
+								<i class="la la-user"></i>
+								<p>个人信息</p>
+								<span class="badge badge-success">2</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="setting.html">
+								<i class="la la-font"></i>
+								<p>设置</p>
+							</a>
+						</li>
+
+						<li class="nav-item update-pro">
+							<button  data-toggle="modal" onclick="changImg()" data-target="#advertisement">
+								<i class="la la-hand-pointer-o"></i>
+								<p class="lead">广 告 位</p>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="main-panel">
+				<div class="content">
+					<div class="container-fluid">
+						<h4 class="page-title">操作</h4>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">修改成绩</h4>
+										<p class="card-category">分数为正整数，范围：0-100</p>
+									</div>
+									<div class="card-body">
+
+										<table class="table table-head-bg-success  table-hover">
+											<thead>
+												<tr>
+													<th scope="col"></th>
+													<th scope="col">课程</th>
+													<th scope="col">学号</th>
+													<th scope="col">学生</th>
+													<th scope="col">班级</th>
+													<th scope="col">成绩</th>
+													<th scope="col">修改成绩</th>
+												</tr>
+
+											</thead>
+											<tbody>
+											{%for course,values in content.items%}
+												{%for value in values%}
+													<tr>
+														<td>{{forloop.counter}}</td>
+														<td>{{course}}</td>
+														<td>{{value.student_id}}</td>
+														<td>{{value.student_name}}</td>
+														<td>{{value.student_cclass}}</td>
+														{%if value.performance < 60 %}
+														<td bgcolor="red">{{value.performance}}</td>
+														{%elif value.performance == None%}
+														<td bgcolor="#a9a9a9">未录入成绩</td>
+														{%else%}
+														<td>{{value.performance}}</td>
+														{%endif%}
+														<td><button type="button" class="btn btn-info btn-xs" onclick="update(this)">编辑</button></td>
+													</tr>
+
+												{% empty %}
+													<tr>
+														<td>1</td>
+														<td>没有学生选择课程</td>
+														<td> </td>
+														<td> </td>
+														<td> </td>
+														<td> </td>
+														<td> </td>
+													</tr>
+												{%endfor%}
+											{% empty %}
+													<tr>
+														<td>1</td>
+														<td>没有学生选择课程</td>
+														<td> </td>
+														<td> </td>
+														<td> </td>
+														<td> </td>
+														<td> </td>
+													</tr>
+											{%endfor%}
+											</tbody>
+										</table>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<footer class="footer">
+					<div class="container-fluid">
+						<nav class="pull-left">
+							<ul class="nav">
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										Nothing
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										Nothing
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#license/#free-item">
+										Help
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<div class="copyright ml-auto">
+							2019, made with <i class="la la-heart heart text-danger"></i> by <a href="#">野指针</a> - Thank for your attention
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div>
+
+<!--广告位 模态框 -->
+	<div class="modal fade" id="advertisement">
+	  <div class="modal-dialog modal-lg">
+		<div class="modal-content">
+		  <!-- 模态框头部 -->
+		  <div class="modal-header">
+			<h4 class="modal-title">广告位</h4>
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+		  </div>
+		  <!-- 模态框主体 -->
+		  <div class="modal-body" >
+			<img src="" style="height: auto;width:100%;background-size:contain;" id ="advertisement_img" class="img-rounded" alt="advertisement">
+		  </div>
+		  <!-- 模态框底部 -->
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+
+</body>
+<script src="../../static/assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="../../static/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="../../static/assets/js/core/popper.min.js"></script>
+<script src="../../static/assets/js/core/bootstrap.min.js"></script>
+<script src="../../static/assets/js/plugin/chartist/chartist.min.js"></script>
+<script src="../../static/assets/js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
+<script src="../../static/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="../../static/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+<script src="../../static/assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="../../static/assets/js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
+<script src="../../static/assets/js/plugin/chart-circle/circles.min.js"></script>
+<script src="../../static/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="../../static/assets/js/ready.min.js"></script>
+<script>
+	//改广告图像url
+	function changImg(){
+	    var new_src = '/static/img/advertisement/10001_advertisement.png'+'?t'+Math.random();
+		$('#advertisement_img').attr("src",new_src)
+	}
+
+	// 双击成绩修改
+	$("tbody tr").find('td:eq(5)').dblclick(function () {
+	    var button_obj = $(this).next().find('button')[0];
+		update(button_obj)
+
+    });
+	function update(button_obj){
+	    var td_obj = $(button_obj).parent().prev()[0];
+	    var performance = $(button_obj).parent().prev().text();
+	    var student_id = $(button_obj).parent().parent().find('td:eq(2)')[0].innerText;
+	    var course = $(button_obj).parent().parent().find('td:eq(1)')[0].innerText;
+
+		if(performance =='未录入成绩'){
+		    $(button_obj).parent().prev().width(100).html("<input type='text' id ='input'>").find("input").width(200).val();
+		}else {
+			$(button_obj).parent().prev().width(100).html("<input type='text' id ='input'>").find("input").width(200).val(performance);
+
+		}
+		button_obj.innerHTML = "确定";
+		$(button_obj).parent().append('<button type="button" style="margin-left: 10px" class="btn btn-default btn-xs" onclick="cancel(this)" >取消</button>')
+		// 上传ajax
+		button_obj.onclick = function onclick(event) {
+                    update_success(student_id,course,td_obj)
+                    };
+
+	}
+	//ajax
+	function update_success(student_id,course,td_obj){
+        var input_val = $(td_obj).find("input").val();
+        var re=/^(?:[1-9]?\d|100)$/;
+        if(re.test(input_val)){
+            $.ajax({
+                url:"update_stu_cou",
+                type:"post",
+                data:{"student_id":student_id,"performance":input_val,"course":course},
+                success:function (arg) {
+                    if (arg =="yes"){
+                        location.reload()
+					}
+					else {
+					    alert(arg);
+						return
+					}
+                }
+            })
+		}else {
+            alert('输入格式不正确')
+			return
+		}
+
+
+    }
+
+
+	function cancel(button_obj) {
+		location.reload()
+    }
+
+
+</script>
+</html>
